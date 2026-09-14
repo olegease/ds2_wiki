@@ -6,6 +6,7 @@ function appMainHTML( ) {
 }
 
 try {
+    document.documentElement.style.colorScheme = 'dark'; // TODO: add swap to 'light' theme
     appMainHTML();
 } catch ( exception ) {
     console.log( exception )

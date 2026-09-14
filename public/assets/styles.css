@@ -1,6 +1,18 @@
+:root {
+    /* light dark theme colors */
+    color-scheme: light dark;
+    --back-color: light-dark( #CCC, #222 ); /* background color */
+    --grey-color: light-dark( #666, #888 ); /* foreground grey font color */
+    --fore-color: light-dark( #222, #CCC ); /* foreground font color */
+}
+
 body {
-    background-color: #222;
-    color: #CCC
+    background-color: var(--back-color);
+    color: var(--fore-color);
+}
+
+header {
+    color: var(--grey-color);
 }
 
 /*
