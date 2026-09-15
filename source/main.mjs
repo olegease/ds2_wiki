@@ -3,6 +3,9 @@ import { createServer }     from 'node:http';
 import path                 from 'node:path'
 import { fileURLToPath }    from 'node:url';
 
+const Source_Dir = path.dirname( fileURLToPath( import.meta.url ) );
+const Public_Dir = path.join( Source_Dir, '../public' );
+
 const App = {
     Http: 'http',
     Host: '127.0.0.1',
@@ -20,7 +23,6 @@ const App = {
         console.log( `Page: ${page}` );
         return page;
     },
-    Public_Dir: path.join( path.dirname( fileURLToPath( import.meta.url ) ), '../public' ),
     Mime: {
         '.html': 'text/html',
         '.css': 'text/css',
@@ -30,7 +32,7 @@ const App = {
         const s = response;
         try {
             const page = this.validate( request );
-            const text = await readFile( path.join( this.Public_Dir, page ) );
+            const text = await readFile( path.join( Public_Dir, page ) );
             s.writeHead( 200, { 'Content-Type': this.Mime[path.extname( page )] } );
             s.end( text, 'utf-8' );
         } catch ( exception ) {

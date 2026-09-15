@@ -4,8 +4,8 @@
   "description": "Dark Souls 2 (Scholar of the First Sin) Wiki Site",
   "main": "source/main.mjs",
   "scripts": {
-    "dev": "node --watch .",
-    "run": "node ."
+    "app": "node .",
+    "dev": "node --watch ."
   },
   "private": true
 }

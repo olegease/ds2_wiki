@@ -10,19 +10,25 @@ RETURNING *;
 ---- pages
 INSERT INTO pages (id,page)
 VALUES
-( ( SELECT id FROM keys WHERE key = 'PSLASH__' ), '/' )
+( kid( 'PSLASH__' ), '/' )
 RETURNING *;
 ---- texts
 INSERT INTO texts (id,text)
 VALUES
-( ( SELECT id FROM keys WHERE key = 'MTEST___' ), ($$test2
+( kid( 'MTEST___' ), ($$test2
 test3
 $$)),
-( ( SELECT id FROM keys WHERE key = 'MSLASH__' ), ($$<p>Dark Souls 2 (Scholar of the First Sin) Wiki Site</p>
+( kid( 'MSLASH__' ), ($$<p>Dark Souls 2 (Scholar of the First Sin) Wiki Site</p>
 <p>TODO</p>$$))
-RETURNING *; -- print
+RETURNING *;
 -- test
 INSERT INTO main_pages (page_id,text_id)
 VALUES
-( ( SELECT id FROM keys WHERE key = 'PSLASH__' ), ( SELECT id FROM keys WHERE key = 'MSLASH__') )
-RETURNING *; -- print
+( kid( 'PSLASH__' ), kid( 'MSLASH__') )
+RETURNING *;
+
+-- GNU Affero General Public License v3.0 or later
+-- NO WARRANTY OF ANY KIND more details at <https://www.gnu.org/licenses/>
+-- SPDX-License-Identifier: AGPL-3.0-or-later
+-- app: `ds2_wiki` Dark Souls 2 (Scholar of the First Sin) Wiki Site
+-- Ⓒ Copyright (C) 2026 Oleg'Ease'Kharchuk ᦒ
