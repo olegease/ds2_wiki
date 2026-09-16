@@ -4,8 +4,14 @@
   "description": "Dark Souls 2 (Scholar of the First Sin) Wiki Site",
   "main": "source/main.mjs",
   "scripts": {
-    "app": "node .",
-    "dev": "node --watch ."
+    "psql:drop": "psql -d ds2 -f source/data/drop.sql",
+    "psql:create": "psql -d ds2 -f source/data/create.sql",
+    "psql:insert": "psql -d ds2 -f source/data/insert.sql",
+    "psql:delete": "psql -d ds2 -f source/data/delete.sql",
+    "psql:setup": "psql -d ds2 -f source/data/create.sql -f source/data/insert.sql",
+    "psql:reset": "psql -d ds2 -f source/data/drop.sql && npm run psql:setup",
+    "node:run": "node .",
+    "node:dev": "node --watch ."
   },
   "private": true
 }

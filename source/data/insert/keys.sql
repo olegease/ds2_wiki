@@ -1,6 +1,12 @@
--- POSTGRES: psql -d ds2 < delete/texts.sql
+-- POSTGRES
 SET search_path TO game, public;
-DELETE FROM keys; -- delete all rows for other tables in cascade
+---- keys
+INSERT INTO keys (key)
+VALUES
+( 'MTEST___' ),
+( 'MSLASH__' ),
+( 'PSLASH__' )
+RETURNING *;
 
 -- GNU Affero General Public License v3.0 or later
 -- NO WARRANTY OF ANY KIND more details at <https://www.gnu.org/licenses/>

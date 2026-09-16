@@ -1,15 +1,6 @@
 -- POSTGRES
-SET search_path TO views, public;
-DROP VIEW IF EXISTS contents;
-DROP SCHEMA IF EXISTS views;
 SET search_path TO game, public;
-DROP TABLE IF EXISTS main_pages;
-DROP TABLE IF EXISTS texts;
-DROP TABLE IF EXISTS pages;
-DROP TABLE IF EXISTS titles;
-DROP TABLE IF EXISTS keys;
-DROP FUNCTION IF EXISTS kid;
-DROP SCHEMA IF EXISTS game;
+DELETE FROM keys; -- delete all rows for other tables in cascade
 
 -- GNU Affero General Public License v3.0 or later
 -- NO WARRANTY OF ANY KIND more details at <https://www.gnu.org/licenses/>

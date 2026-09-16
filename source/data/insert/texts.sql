@@ -1,12 +1,5 @@
--- POSTGRES: psql -d ds2 < insert/texts.sql
+-- POSTGRES
 SET search_path TO game, public;
----- keys
-INSERT INTO keys (key)
-VALUES
-( 'MTEST___' ),
-( 'MSLASH__' ),
-( 'PSLASH__' )
-RETURNING *;
 ---- pages
 INSERT INTO pages (id,page)
 VALUES

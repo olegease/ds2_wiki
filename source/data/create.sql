@@ -1,4 +1,4 @@
--- POSTGRES: psql -d ds2 < create.sql
+-- POSTGRES
 ---- SCHEMA: game
 CREATE SCHEMA IF NOT EXISTS game;
 SET search_path TO game, public;
