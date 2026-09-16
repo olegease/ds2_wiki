@@ -11,7 +11,8 @@
     "psql:setup": "psql -d ds2 -f source/data/create.sql -f source/data/insert.sql",
     "psql:reset": "psql -d ds2 -f source/data/drop.sql && npm run psql:setup",
     "node:run": "node .",
-    "node:dev": "node --watch ."
+    "node:dev": "node --watch .",
+    "node:data": "node source/data.mjs"
   },
   "private": true
 }
